@@ -4,7 +4,5 @@
 
 int main() {
 
-    saisirBateau();
-
-    return 0;
+    return EXIT_SUCCESS;
 }

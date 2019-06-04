@@ -9,20 +9,10 @@
 #define LABO10_GESTIONPORT_H
 
 #include <stdbool.h>
+#include "bateau.h"
 
 #define CAPACITE_PORT 40
-#define LONGUEUR_PLAQUE_MAX 5
-#define NB_TYPE 3
 
-const char* TYPE_BATEAU[] = {
-    "Moteur",
-    "Voile",
-    "Rame"
-};
-
-typedef enum {
-    MOTEUR, VOILE, RAME
-} Type;
 
 typedef const char *NoPlaque;
 
@@ -39,23 +29,11 @@ typedef struct {
     double surface; // mètre carrés
 } BateauVoile;
 
-typedef union {
-    BateauMoteur moteur;
-    BateauVoile  voile;
-    BateauRame   rame;
-} Details;
 
-typedef struct {
-    Type type;
-    NoPlaque no;
-    double longeur; // mètres
-    Details details;
-} Bateau;
 
 typedef Bateau* Port[CAPACITE_PORT];
 
 
-Bateau saisirBateau();
 
 bool placerBateau(Bateau bateau, Port port);
 
