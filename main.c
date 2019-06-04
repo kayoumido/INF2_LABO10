@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "gestionPort.h"
 
 int main() {
-    printf("Hello, World!\n");
+
+    saisirBateau();
+
     return 0;
 }

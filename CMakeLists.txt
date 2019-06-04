@@ -3,4 +3,4 @@ project(Labo10 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Labo10 main.c)
+add_executable(Labo10 main.c bateau.h gestionPort.c gestionPort.h)
