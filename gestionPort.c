@@ -21,18 +21,17 @@ Details (*saisirDetails[])(void) = {
     saisirDetailsVoile
 };
 
-
 Bateau saisirBateau() {
     Bateau result;
 
     // Noplaque
     unsigned ok;
-    char no[MAX_NO_LENGTH+1];
+    char no[LONGUEUR_PLAQUE_MAX+1];
     do {
         printf("Veuillez saisir le no de plaque du bateau : ");
 
         char format[5];
-        sprintf(format, "%%%ds", MAX_NO_LENGTH);
+        sprintf(format, "%%%ds", LONGUEUR_PLAQUE_MAX);
 
         ok = scanf(format, &no);
         VIDER_BUFFER;
@@ -56,11 +55,18 @@ Bateau saisirBateau() {
     Type type;
     // type
     do {
-        printf("Veuilez saisir le type du bateu [0:Moteur, 1:Voile, 2:Rame] : ");
+        printf("Veuilez saisir le type du bateu [");
+        for (int i = 0; i < NB_TYPE; ++i) {
+            if (i)
+                printf(", ");
+
+            printf("%d:%s", i, TYPE_BATEAU[i]);
+        }
+        printf("] : ");
 
         ok = scanf("%d", &type);
         VIDER_BUFFER;
-    } while ((!ok || type > MAX_NB_BATEAU_TYPE - 1) && printf("Une erreur est survenu!\n"));
+    } while ((!ok || type > NB_TYPE - 1) && printf("Une erreur est survenu!\n"));
     result.type = type;
 
     printf("\n");

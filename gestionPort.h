@@ -10,9 +10,15 @@
 
 #include <stdbool.h>
 
-#define MAX_NB_BATEAU 40
-#define MAX_NO_LENGTH 5
-#define MAX_NB_BATEAU_TYPE 3
+#define CAPACITE_PORT 40
+#define LONGUEUR_PLAQUE_MAX 5
+#define NB_TYPE 3
+
+const char* TYPE_BATEAU[] = {
+    "Moteur",
+    "Voile",
+    "Rame"
+};
 
 typedef enum {
     MOTEUR, VOILE, RAME
@@ -46,7 +52,7 @@ typedef struct {
     Details details;
 } Bateau;
 
-typedef Bateau* Port[MAX_NB_BATEAU];
+typedef Bateau* Port[CAPACITE_PORT];
 
 
 Bateau saisirBateau();
