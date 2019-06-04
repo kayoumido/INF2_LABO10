@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include "gestionPort.h"
 
 int main() {
-    printf("Hello, World!\n");
+
+    saisirBateau();
+
     return 0;
 }
