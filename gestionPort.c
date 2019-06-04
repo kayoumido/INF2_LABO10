@@ -9,6 +9,8 @@
 
 #include "gestionPort.h"
 
+#define VIDER_BUFFER while(getchar() != '\n')
+
 Details saisirDetailsMoteur(void);
 Details saisirDetailsVoile(void);
 Details saisirDetailsRame(void);
@@ -33,7 +35,7 @@ Bateau saisirBateau() {
         sprintf(format, "%%%ds", MAX_NO_LENGTH);
 
         ok = scanf(format, &no);
-
+        VIDER_BUFFER;
     } while (!ok && printf("Une erreur est survenu!\n"));
     result.no = no;
 
@@ -45,7 +47,7 @@ Bateau saisirBateau() {
         printf("Veuillez saisir la longueur du bateau : ");
 
         ok = scanf("%lf", &longueur);
-
+        VIDER_BUFFER;
     } while (!ok && printf("Une erreur est survenu!\n"));
     result.longeur = longueur;
 
@@ -57,7 +59,7 @@ Bateau saisirBateau() {
         printf("Veuilez saisir le type du bateu [0:Moteur, 1:Voile, 2:Rame] : ");
 
         ok = scanf("%d", &type);
-
+        VIDER_BUFFER;
     } while ((!ok || type > MAX_NB_BATEAU_TYPE - 1) && printf("Une erreur est survenu!\n"));
     result.type = type;
 
@@ -71,15 +73,24 @@ Bateau saisirBateau() {
 
 Details saisirDetailsMoteur(void) {
     Details result;
+
+    printf("saisirDetailsMoteur");
+
     return result;
 }
 
 Details saisirDetailsVoile(void) {
     Details result;
+
+    printf("saisirDetailsVoile");
+
     return result;
 }
 
 Details saisirDetailsRame(void) {
     Details result;
+
+    printf("saisirDetailsRame");
+
     return result;
 }
