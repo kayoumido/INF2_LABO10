@@ -10,18 +10,23 @@
 
 typedef enum {MOTEUR, VOILE, RAME} Type;
 typedef const char* NoPlaque;
+typedef double Longueur;
+typedef double Puissance;
+typedef double Surface;
+typedef unsigned short NBMoteurs;
+typedef unsigned short NBRames;
 
 typedef struct  {
-    unsigned short nbMoteurs;
-    double puissance;
+    NBMoteurs nbMoteurs;
+    Puissance puissance;
 } BateauMoteur;
 
 typedef struct  {
-    unsigned short nbRames;
+    NBRames nbRames;
 } BateauRame;
 
 typedef struct  {
-    double surface; // mètre carrés
+    Surface surface; // mètre carrés
 } BateauVoile;
 
 typedef union   {
@@ -33,7 +38,7 @@ typedef union   {
 typedef struct  {
   Type type;
   NoPlaque no;
-  double longeur; // mètres
+  Longueur longeur; // mètres
   Details details;
 } Bateau;
 
