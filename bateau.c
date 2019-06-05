@@ -46,7 +46,7 @@ Bateau saisirBateau(){
         ok = scanf(format, &no);
         VIDER_BUFFER;
     } while (!ok && printf("Une erreur est survenu!\n"));
-    result.No = no;
+    result.no = no;
 
     printf("\n");
 
@@ -86,7 +86,6 @@ Bateau saisirBateau(){
 
     return result;
 }
-
 
 void afficherDetailsBateau(Bateau* b){
     

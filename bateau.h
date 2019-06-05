@@ -1,42 +1,38 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   navire.h
- * Author: Alois
+ * File:   bateau.h
+ * Author: Aloïs Christen, Doran Kayoumi
  *
  * Created on 28. mai 2019, 16:47
  */
 
-#ifndef NAVIRE_H
-#define NAVIRE_H
+#ifndef BATEAU_H
+#define BATEAU_H
 
 typedef enum {MOTEUR, VOILE, RAME} Type;
-typedef const char* No_plaque;
+typedef const char* NoPlaque;
 
 typedef struct  {
-    unsigned short nb_moteurs;
+    unsigned short nbMoteurs;
     double puissance;
-} Bateau_moteur;
+} BateauMoteur;
+
 typedef struct  {
-    unsigned short nb_rames;
-} Bateau_rame;
+    unsigned short nbRames;
+} BateauRame;
+
 typedef struct  {
     double surface; // mètre carrés
-} Bateau_voile;
+} BateauVoile;
 
 typedef union   {
-  Bateau_moteur moteur;  
-  Bateau_rame rame;  
-  Bateau_voile voile;  
+  BateauMoteur moteur;
+  BateauRame rame;
+  BateauVoile voile;
 } Details;
 
 typedef struct  {
   Type type;
-  No_plaque No;
+  NoPlaque no;
   double longeur; // mètres
   Details details;
 } Bateau;
@@ -44,5 +40,5 @@ typedef struct  {
 Bateau saisirBateau();
 void afficherDetailsBateau(Bateau* b);
 
-#endif /* NAVIRE_H */
+#endif /* BATEAU_H */
 
