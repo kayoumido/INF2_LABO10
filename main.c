@@ -5,6 +5,6 @@
 
 int main() {
     Bateau b = saisirBateau();
-    afficherDetailsBateau(&b, true);
+    afficherDetailsBateau(&b);
     return EXIT_SUCCESS;
 }

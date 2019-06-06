@@ -25,7 +25,7 @@ void afficherDetails(NoPlaque plaque, Port port);
 
 void afficherPlace(size_t empl, Port port);
 
-void parcours(Port port, void(*f)(NoPlaque no, Port port));
+void parcours(Port port, void(*funct)(Bateau* bateau));
 
 void afficherPort(Port port);
 

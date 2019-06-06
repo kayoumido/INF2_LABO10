@@ -44,7 +44,8 @@ typedef struct  {
 } Bateau;
 
 Bateau saisirBateau();
-void afficherDetailsBateau(Bateau* b, bool aussi_type);
+void afficherBateau(Bateau* b);
+void afficherDetailsBateau(Bateau* b);
 
 #endif /* BATEAU_H */
 
