@@ -46,7 +46,7 @@ bool placerBateau(const Bateau *bateau, Port port) {
     // Parcours du port pour vérifier si le bateau n'est pas déjà présent
     // s'il est déjà présent, on ne fais rien
     size_t place = trouverBateau(bateau->no, port);
-    if (place == -1)
+    if (place != -1)
         return false;
 
     // On vérifie s'il y a une place de livre de port
