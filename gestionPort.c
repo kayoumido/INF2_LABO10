@@ -56,7 +56,5 @@ void afficherDetails(NoPlaque plaque, Port port){
     }
 }
 
-void parcours();
-
 void afficherPort();
 

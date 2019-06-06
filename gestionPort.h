@@ -15,8 +15,6 @@
 
 typedef Bateau* Port[CAPACITE_PORT];
 
-
-
 bool placerBateau(const Bateau* bateau, Port port);
 
 void libererPlace(NoPlaque plaque, Port port);
