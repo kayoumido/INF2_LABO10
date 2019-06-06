@@ -176,11 +176,11 @@ Details saisirDetailsRame(void) {
 
     return result;
 }
-void afficherDetailsBateau(Bateau* b, bool aussi_type){
+void afficherDetailsBateau(Bateau* b, bool details){
    printf("No de plaque\t:\t%s\n", b->no);
    printf("Longeur\t\t:\t%lf\n", b->longeur);
    printf("Type de bateau\t:\t%s\n", TYPE_BATEAU[b->type]);
-   if(aussi_type){
+   if(details){
    // Appel de la fonction d'afficher des details 
         afficherDetailsFoncPtr[b->type](b);
    }

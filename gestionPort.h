@@ -23,8 +23,10 @@ void libererPlace(NoPlaque plaque, Port port);
 
 void afficherDetails(NoPlaque plaque, Port port);
 
-void parcours();
+void afficherPlace(size_t empl, Port port);
 
-void afficherPort();
+void parcours(Port port, void(*f)(NoPlaque no, Port port));
+
+void afficherPort(Port port);
 
 #endif //LABO10_GESTIONPORT_H
