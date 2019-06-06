@@ -182,11 +182,14 @@ Details saisirDetailsRame(void) {
 
     return result;
 }
-
-void afficherDetailsBateau(Bateau *b, bool details) {
-    printf("No de plaque\t:\t%s\n", b->no);
-    printf("Type\t:\t%s\n", TYPE_BATEAU[b->type]);
-    printf("Longueur\t:\t%lf\n", b->longeur);
+void afficherBateau(Bateau* b){
+   printf("No de plaque\t:\t%s\n", b->no);
+   printf("Longeur\t\t:\t%lf\n", b->longeur);
+   printf("Type de bateau\t:\t%s\n", TYPE_BATEAU[b->type]);
+}
+void afficherDetailsBateau(Bateau* b){
+    afficherBateau(b);
+   // Appel de la fonction d'afficher des details 
     afficherDetailsFoncPtr[b->type](b);
 }
 

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "tools.h"
 #include "gestionPort.h"
 #define CAPACITE_PORT 40
 
@@ -50,11 +51,27 @@ void libererPlace(NoPlaque plaque, Port port){
 void afficherDetails(NoPlaque plaque, Port port){
     size_t empl = trouverEmplBateau(plaque, port);
     if(empl < CAPACITE_PORT){
-        afficherDetailsBateau(port[empl], false);
+        afficherDetailsBateau(port[empl]);
+    } 
+}
+
+void afficherPlace(size_t empl, Port port){
+    if(port[empl]){
+        afficherBateau(port[empl]);
     } else {
         printf("-\n");
     }
 }
 
-void afficherPort();
+void parcours(Port port, void(*funct)(Bateau* bateau)){
+    for(size_t i = 0; i < CAPACITE_PORT; i++){
+        if(port[i]){
+            funct(port[i]);
+        }
+    }
+}
+
+void afficherPort(Port port){
+    parcours(port, afficherDetailsBateau);
+}
 

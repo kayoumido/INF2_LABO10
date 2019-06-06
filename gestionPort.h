@@ -21,8 +21,10 @@ void libererPlace(NoPlaque plaque, Port port);
 
 void afficherDetails(NoPlaque plaque, Port port);
 
-void parcours();
+void afficherPlace(size_t empl, Port port);
 
-void afficherPort();
+void parcours(Port port, void(*funct)(Bateau* bateau));
+
+void afficherPort(Port port);
 
 #endif //LABO10_GESTIONPORT_H
