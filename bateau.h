@@ -15,15 +15,17 @@
 #define NAVIRE_H
 
 typedef enum {MOTEUR, VOILE, RAME} Type;
-typedef const char* No_plaque;
+typedef const char* Noplaque;
 
 typedef struct  {
-    unsigned short nb_moteurs;
+    unsigned int nb_moteurs;
     double puissance;
 } Bateau_moteur;
+
 typedef struct  {
-    unsigned short nb_rames;
+    unsigned int nb_rames;
 } Bateau_rame;
+
 typedef struct  {
     double surface; // mètre carrés
 } Bateau_voile;
@@ -36,7 +38,7 @@ typedef union   {
 
 typedef struct  {
   Type type;
-  No_plaque No;
+  Noplaque No;
   double longeur; // mètres
   Details details;
 } Bateau;
