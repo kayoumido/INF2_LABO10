@@ -2,7 +2,7 @@
  * File:   bateau.c
  * Author: Aloïs Christen, Doran Kayoumi
  *
- * Created on 28. mai 2019, 16:47
+ * Implementation des fonctions de gestion de bateau
  */
 
 #include <stdio.h>
@@ -22,25 +22,74 @@ const char* TYPE_BATEAU[] = {
     "Rame"
 };
 
-void saisirDonee(const char *question, const char *erreur, const char *format, void* result);
-
+/**
+ * @brief Gestion de la saisie d'un no de plaque
+ *
+ * @return le no de plaque
+ */
 NoPlaque saisirNoPlaque(void);
-Longueur saisirLongueur(void);
-Type     saisirType(void);
 
+/**
+ * @brief Gestion de la saisie d'une longueur de bateau
+ *
+ * @return la longueur
+ */
+Longueur saisirLongueur(void);
+
+/**
+ * @brief Gestion de la saisie d'un type de bateau
+ *
+ * @return le type du bateau
+ */
+Type saisirType(void);
+
+/**
+ * @brief Gestion de la saisie des détails d'un bateau moteur
+ *
+ * @return Les details d'un bateau moteur
+ */
 Details saisirDetailsMoteur(void);
+
+/**
+ * @brief Gestion de la saisie des détails d'un bateau rame
+ *
+ * @return Les details d'un bateau rame
+ */
 Details saisirDetailsRame(void);
+
+/**
+ * @brief Gestion de la saisie des détails d'un bateau voile
+ *
+ * @return Les details d'un bateau voile
+ */
 Details saisirDetailsVoile(void);
+
+/**
+ * @brief Affiche le détails d'une bateau moteur
+ *
+ * @param b bateau à afficher
+ */
+void afficherDetailsMoteur(Bateau* b);
+
+/**
+ * @brief Affiche le détails d'une bateau rame
+ *
+ * @param b bateau à afficher
+ */
+void afficherDetailsRame(Bateau* b);
+
+/**
+ * @brief Affiche le détails d'une bateau voile
+ *
+ * @param b bateau à afficher
+ */
+void afficherDetailsVoile(Bateau* b);
 
 Details (*saisirDetails[])(void) = {
     saisirDetailsMoteur,
     saisirDetailsVoile,
     saisirDetailsRame
 };
-
-void afficherDetailsMoteur(Bateau* b);
-void afficherDetailsRame(Bateau* b);
-void afficherDetailsVoile(Bateau* b);
 
 void (*afficherDetailsFoncPtr[])(Bateau*) = {
     afficherDetailsMoteur,
@@ -180,6 +229,7 @@ void afficherBateau(Bateau* b){
    printf("Longeur\t\t:\t%lf\n", b->longeur);
    printf("Type de bateau\t:\t%s\n", TYPE_BATEAU[b->type]);
 }
+
 void afficherDetailsBateau(Bateau* b) {
     if (!b)
         return;

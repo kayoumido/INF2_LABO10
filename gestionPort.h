@@ -2,7 +2,7 @@
  * File:   gestionPort.h
  * Author: Aloïs Christen, Doran Kayoumi
  *
- * Created on 28. mai 2019, 16:47
+ * Déclaration structure d'un port et les divers fonction permettant la gestion d'un port
  */
 
 #ifndef LABO10_GESTIONPORT_H

@@ -2,7 +2,7 @@
  * File:   gestionPort.h
  * Author: Aloïs Christen, Doran Kayoumi
  *
- * Created on 28. mai 2019, 16:47
+ * Implementation des fonctions de gestion de port
  */
 
 #include <stdio.h>
@@ -10,7 +10,6 @@
 
 #include "tools.h"
 #include "gestionPort.h"
-
 
 /**
  * @brief Parcours un port afin de trouver la première place disponible

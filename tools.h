@@ -1,6 +1,9 @@
-//
-// Created by deekay on 05/06/19.
-//
+/*
+ * File:   tools.h
+ * Author: Aloïs Christen, Doran Kayoumi
+ *
+ * Fichier contenant des macros/fonctions pouvant être utilisé partout
+ */
 
 #ifndef LABO10_TOOLS_H
 #define LABO10_TOOLS_H

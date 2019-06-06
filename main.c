@@ -1,3 +1,13 @@
+/*
+ * Labo 10
+ * But: Organiser la gestion d’un port occupé
+ * par des bateaux de différents types
+ *
+ * File:   main.c
+ * Author: Aloïs Christen, Doran Kayoumi
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -7,7 +17,7 @@
 #include "tools.h"
 
 int main() {
-//    Bateau b1 = saisirBateau();
+    Bateau b = saisirBateau();
 //    Bateau b2 = saisirBateau();
 //    Bateau b3 = saisirBateau();
 

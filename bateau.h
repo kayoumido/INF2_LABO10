@@ -2,7 +2,8 @@
  * File:   bateau.h
  * Author: Aloïs Christen, Doran Kayoumi
  *
- * Created on 28. mai 2019, 16:47
+ * Déclaration de la structure d'un bateau et des divers fonctions
+ * de gestion de bateaux
  */
 
 #ifndef BATEAU_H
@@ -44,8 +45,25 @@ typedef struct  {
   Details details;
 } Bateau;
 
+/**
+ * @brief Effectue la saisie utilisateur pour créer un bateau
+ *
+ * @return Bateau créé à partir des données saisies par l'utilisateur
+ */
 Bateau saisirBateau();
+
+/**
+ * @brief Affiche les infos commune a tous les types de bateau
+ *
+ * @param b le bateau a afficher
+ */
 void afficherBateau(Bateau* b);
+
+/**
+ * @brief Affiche TOUTES les données d'une bateau
+ *
+ * @param b le bateau a afficher
+ */
 void afficherDetailsBateau(Bateau* b);
 
 #endif /* BATEAU_H */
