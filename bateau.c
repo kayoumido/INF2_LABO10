@@ -18,8 +18,8 @@
 
 const char* TYPE_BATEAU[] = {
     "Moteur",
-    "Rame",
-    "Voile"
+    "Voile",
+    "Rame"
 };
 
 void saisirDonee(const char *question, const char *erreur, const char *format, void* result);
@@ -27,7 +27,6 @@ void saisirDonee(const char *question, const char *erreur, const char *format, v
 NoPlaque saisirNoPlaque(void);
 Longueur saisirLongueur(void);
 Type     saisirType(void);
-
 
 Details saisirDetailsMoteur(void);
 Details saisirDetailsRame(void);
@@ -45,8 +44,8 @@ void afficherDetailsVoile(Bateau* b);
 
 void (*afficherDetailsFoncPtr[])(Bateau*) = {
     afficherDetailsMoteur,
-    afficherDetailsRame,
-    afficherDetailsVoile
+    afficherDetailsVoile,
+    afficherDetailsRame
 };
 
 Bateau saisirBateau() {
@@ -56,6 +55,7 @@ Bateau saisirBateau() {
     bateau.longeur  = saisirLongueur();
     bateau.type     = saisirType();
     bateau.details  = saisirDetails[bateau.type]();
+    NEW_LINE;
 
     return bateau;
 }
@@ -72,7 +72,6 @@ NoPlaque saisirNoPlaque(void) {
         VIDER_BUFFER;
 
     } while (!ok && printf("/!\\ Le no de plaque saisie est invalide!\n"));
-    NEW_LINE;
 
     return noPtr;
 }
@@ -86,7 +85,6 @@ Longueur saisirLongueur(void) {
         ok = scanf("%lf", &longueur);
         VIDER_BUFFER;
     } while (!ok && printf("La longueur saisie est invalide!\n"));
-    NEW_LINE;
 
     return longueur;
 }
@@ -107,7 +105,6 @@ Type saisirType(void) {
         ok = scanf("%d", &type);
         VIDER_BUFFER;
     } while ((!ok || type > NB_TYPE - 1) && printf("Le type saisie est inconnu!\n"));
-    NEW_LINE;
 
     return type;
 }
@@ -124,7 +121,6 @@ Details saisirDetailsMoteur(void) {
         ok = scanf("%u", &nbMoteurs);
         VIDER_BUFFER;
     } while (!ok && printf("%s", "NNMoteurs : Erreur de saisie!"));
-    NEW_LINE;
 
     do {
         printf("%s", "Veuillez saisir la puissance : ");
@@ -132,7 +128,6 @@ Details saisirDetailsMoteur(void) {
         ok = scanf("%lf", &puissance);
         VIDER_BUFFER;
     } while (!ok && printf("%s", "Puissance : Erreur de saisie!"));
-    NEW_LINE;
 
     result.moteur = (BateauMoteur){
         .nbMoteurs = nbMoteurs,
@@ -153,7 +148,6 @@ Details saisirDetailsVoile(void) {
         ok = scanf("%lf", &surface);
         VIDER_BUFFER;
     } while (!ok && printf("Surface : Erreur de saisie!"));
-    NEW_LINE;
 
     result.voile = (BateauVoile) {
         .surface = surface
@@ -174,23 +168,27 @@ Details saisirDetailsRame(void) {
         VIDER_BUFFER;
     } while (!ok && printf("Rame : Erreur de saisie!"));
 
-    NEW_LINE;
-
     result.rame = (BateauRame) {
         .nbRames = nbRames
     };
 
     return result;
 }
+
 void afficherBateau(Bateau* b){
    printf("No de plaque\t:\t%s\n", b->no);
    printf("Longeur\t\t:\t%lf\n", b->longeur);
    printf("Type de bateau\t:\t%s\n", TYPE_BATEAU[b->type]);
 }
-void afficherDetailsBateau(Bateau* b){
+void afficherDetailsBateau(Bateau* b) {
+    if (!b)
+        return;
+
     afficherBateau(b);
+
    // Appel de la fonction d'afficher des details 
     afficherDetailsFoncPtr[b->type](b);
+    NEW_LINE;
 }
 
 void afficherDetailsMoteur(Bateau* b) {

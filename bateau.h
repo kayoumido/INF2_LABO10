@@ -9,6 +9,7 @@
 #define BATEAU_H
 
 #include <stdbool.h>
+
 typedef enum {MOTEUR, VOILE, RAME} Type;
 typedef const char* NoPlaque;
 typedef double Longueur;
