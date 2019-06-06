@@ -45,8 +45,7 @@ Bateau saisirBateau(){
 
     // Noplaque
     unsigned ok;
-    char no[LONGUEUR_PLAQUE_MAX+1] = (char) calloc(char, 
-                                                   LONGUEUR_PLAQUE_MAX + 1);
+    char no[LONGUEUR_PLAQUE_MAX+1];
     do {
         printf("Veuillez saisir le no de plaque du bateau : ");
 
@@ -146,12 +145,14 @@ Details saisirDetailsVoile(void) {
     return result;
 }
 
-void afficherDetailsBateau(Bateau* b){
+void afficherDetailsBateau(Bateau* b, bool aussi_type){
    printf("No de plaque\t:\t%s\n", b->No);
    printf("Longeur\t\t:\t%lf\n", b->longeur);
    printf("Type de bateau\t:\t%s\n", TYPE_BATEAU[b->type]);
+   if(aussi_type){
    // Appel de la fonction d'afficher des details 
-   afficherDetails[b->type](b);
+        afficherDetails[b->type](b);
+   }
 }
 
 void afficherDetailsMoteur(Bateau* b){

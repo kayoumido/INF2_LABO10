@@ -14,6 +14,7 @@
 #ifndef NAVIRE_H
 #define NAVIRE_H
 
+#include <stdbool.h>
 typedef enum {MOTEUR, VOILE, RAME} Type;
 typedef const char* Noplaque;
 
@@ -44,7 +45,7 @@ typedef struct  {
 } Bateau;
 
 Bateau saisirBateau();
-void afficherDetailsBateau(Bateau* b);
+void afficherDetailsBateau(Bateau* b, bool aussi_type);
 
 #endif /* NAVIRE_H */
 

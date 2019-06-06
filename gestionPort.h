@@ -16,30 +16,16 @@
 
 typedef const char *NoPlaque;
 
-typedef struct {
-    unsigned short nb_moteurs;
-    double puissance;
-} BateauMoteur;
-
-typedef struct {
-    unsigned short nb_rames;
-} BateauRame;
-
-typedef struct {
-    double surface; // mètre carrés
-} BateauVoile;
-
-
 
 typedef Bateau* Port[CAPACITE_PORT];
 
 
 
-bool placerBateau(Bateau bateau, Port port);
+bool placerBateau(const Bateau* bateau, Port port);
 
-void libererPlace(NoPlaque plaque);
+void libererPlace(NoPlaque plaque, Port port);
 
-void afficherDetails(NoPlaque plaque);
+void afficherDetails(NoPlaque plaque, Port port);
 
 void parcours();
 
