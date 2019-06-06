@@ -13,10 +13,6 @@
 
 #define CAPACITE_PORT 40
 
-
-typedef const char *NoPlaque;
-
-
 typedef Bateau* Port[CAPACITE_PORT];
 
 
